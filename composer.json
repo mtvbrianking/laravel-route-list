@@ -22,7 +22,7 @@
   ],
   "require": {
     "php": ">=7.0.0",
-    "illuminate/router": "^5.5|^6.0|^7.0",
+    "illuminate/routing": "^5.5|^6.0|^7.0",
     "illuminate/support": "^5.5|^6.0|^7.0"
   },
   "require-dev": {

@@ -13,9 +13,21 @@ class RouteListServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if (config('route-list.debug') != config('app.debug')) {
+            return;
+        }
+
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
+
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'route-list');
+
         $this->publishes([
-            __DIR__.'/../config/route-list.php' => base_path('config/route-list.php'),
+            __DIR__.'/../config/route-list.php' => config_path('route-list.php'),
         ], 'config');
+
+        $this->publishes([
+            __DIR__.'/../public' => public_path('vendor/route-list'),
+        ], 'public');
     }
 
     /**
