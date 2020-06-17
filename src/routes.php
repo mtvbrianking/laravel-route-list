@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 Route::group([
     'as' => 'route-list.',
     'prefix' => config('route-list.prefix'),
