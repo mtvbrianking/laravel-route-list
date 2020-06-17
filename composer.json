@@ -1,16 +1,16 @@
 {
-  "name": "bmatovu/laravel-package-boilerplate",
-  "description": "Laravel package boilerplate.",
-  "homepage": "https://github.com/mtvbrianking/laravel-package-boilerplate",
-  "type": "project",
+  "name": "bmatovu/laravel-route-list",
+  "description": "Laravel route list.",
+  "homepage": "https://github.com/mtvbrianking/laravel-route-list",
+  "type": "library",
   "license": "MIT",
   "keywords": [
     "laravel",
     "lumen",
     "package",
-    "development",
-    "starter",
-    "boilerplate"
+    "pretty",
+    "route",
+    "list"
   ],
   "authors": [
     {
@@ -22,6 +22,7 @@
   ],
   "require": {
     "php": ">=7.0.0",
+    "illuminate/router": "^5.5|^6.0|^7.0",
     "illuminate/support": "^5.5|^6.0|^7.0"
   },
   "require-dev": {
@@ -31,12 +32,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Bmatovu\\HelloWorld\\": "src/"
+      "Bmatovu\\RouteList\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Bmatovu\\HelloWorld\\Tests\\": "tests/"
+      "Bmatovu\\RouteList\\Tests\\": "tests/"
     }
   },
   "minimum-stability": "dev",
@@ -52,11 +53,8 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Bmatovu\\HelloWorld\\HelloWorldServiceProvider"
-      ],
-      "aliases": {
-        "HelloWorld": "Bmatovu\\HelloWorld\\HelloWorldFacade"
-      }
+        "Bmatovu\\RouteList\\RouteListServiceProvider"
+      ]
     }
   }
 }
