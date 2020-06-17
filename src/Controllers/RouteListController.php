@@ -47,6 +47,14 @@ class RouteListController extends Controller
         })->implode(', ');
     }
 
+    /**
+     * Perform a regular expression match.
+     *
+     * @param array  $patterns
+     * @param string $subject
+     *
+     * @return bool
+     */
     protected function matches($patterns, $subject)
     {
         $isMatched = false;
