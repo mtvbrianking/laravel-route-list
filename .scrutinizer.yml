@@ -5,7 +5,6 @@ checks:
 
 filter:
   excluded_paths:
-    - "docs/"
     - "tests/"
 
 # Tessts
