@@ -19,7 +19,7 @@ class RouteListController extends Controller
                 return ! $this->matches(config('route-list.excluded'), $route->uri);
             })->map(function ($route) {
                 return [
-                    'host' => $route->action['where'],
+                    // 'host' => $route->action['where'],
                     'uri' => $route->uri,
                     'name' => $route->action['as'] ?? '',
                     'methods' => $route->methods,

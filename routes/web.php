@@ -7,6 +7,6 @@ Route::group([
     'prefix' => config('route-list.prefix'),
     'namespace' => 'Bmatovu\RouteList\Controllers',
     'middleware' => config('route-list.middleware', []),
-], function () {
+], static function () {
     Route::get('/', 'RouteListController')->name('index');
 });

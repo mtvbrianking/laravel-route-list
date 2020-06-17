@@ -19,4 +19,21 @@ abstract class TestCase extends Orchestra
             RouteListServiceProvider::class,
         ];
     }
+
+    /**
+     * Get package aliases.
+     *
+     * @param \Illuminate\Foundation\Application $app
+     *
+     * @return array
+     */
+    protected function getPackageAliases($app)
+    {
+        return [
+            // 'config' => [
+            //     \Illuminate\Config\Repository::class,
+            //     \Illuminate\Contracts\Config\Repository::class,
+            // ],
+        ];
+    }
 }
