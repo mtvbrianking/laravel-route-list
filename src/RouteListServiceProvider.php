@@ -2,6 +2,8 @@
 
 namespace Bmatovu\RouteList;
 
+use Illuminate\Container\Container;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Support\ServiceProvider;
 
 class RouteListServiceProvider extends ServiceProvider
@@ -13,9 +15,13 @@ class RouteListServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (config('route-list.debug') != config('app.debug')) {
+        $config = Container::getInstance()->make(Repository::class);
+
+        if ($config->get('route-list.debug') != $config->get('app.debug')) {
             return;
         }
+
+        // ...
 
         $this->loadRoutesFrom(__DIR__.'/routes.php');
 
