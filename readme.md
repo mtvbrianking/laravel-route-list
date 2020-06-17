@@ -1,65 +1,33 @@
-## Laravel Package Boilerplate.
+## Laravel Route List.
 
-[![Build Status](https://travis-ci.org/mtvbrianking/laravel-package-boilerplate.svg?branch=master)](https://travis-ci.org/mtvbrianking/laravel-package-boilerplate)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mtvbrianking/laravel-package-boilerplate/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mtvbrianking/laravel-package-boilerplate/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/mtvbrianking/laravel-package-boilerplate/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mtvbrianking/laravel-package-boilerplate/?branch=master)
-[![StyleCI](https://github.styleci.io/repos/230607368/shield?branch=master)](https://github.styleci.io/repos/230607368)
-[![Documentation](https://img.shields.io/badge/Documentation-Blue)](https://mtvbrianking.github.io/laravel-package-boilerplate)
+[![Build Status](https://travis-ci.org/mtvbrianking/laravel-route-list.svg?branch=master)](https://travis-ci.org/mtvbrianking/laravel-route-list)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mtvbrianking/laravel-route-list/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mtvbrianking/laravel-route-list/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/mtvbrianking/laravel-route-list/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mtvbrianking/laravel-route-list/?branch=master)
+[![StyleCI](https://github.styleci.io/repos/272880343/shield?branch=master)](https://github.styleci.io/repos/272880343)
+[![Documentation](https://img.shields.io/badge/Documentation-Blue)](https://mtvbrianking.github.io/laravel-route-list)
 
-### [Installation](https://packagist.org/packages/bmatovu/laravel-package-boilerplate)
+### [Installation](https://packagist.org/packages/bmatovu/laravel-route-list)
 
 Install via Composer package manager:
 
 ```bash
-composer create-project --prefer-dist bmatovu/laravel-package-boilerplate hello-world
+composer require bmatovu/laravel-route-list
 ```
 
-### Step #1: Own the package
-
-Update the `composer.json` file to match your credentials.
-
-Change the namespaces to match those you're using in `src`.
-
-Change the type from `project` to `library`
+Enable debug mode
 
 ```bash
-composer dump-autoload
+APP_DEBUG=true
 ```
 
-### Step #2: Source code documentation
-
-You need to download [Sami](https://github.com/FriendsOfPHP/Sami) for source code documentation.
+Publish assets
 
 ```bash
-curl -O http://get.sensiolabs.org/sami.phar
+php artisan vendor:publish --provider="Bmatovu\RouteList\RouteListServiceProvider"
 ```
 
-To auto deploy documentation; be sure to add a [`Github token`](https://github.com/settings/tokens) for authorization.
-
-### Step #3: Code Style & Quality
-
-We've added [StyleCI](https://styleci.io) configurations with the Laravel present to get you started.
-
-Also added [ScrutinizerCI](https://scrutinizer-ci.com) configurations for code quality, test coverage inspection.
-
-Locally, you can restort to [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer).
+Usage
 
 ```bash
-php-cs-fixer fix
+http://localhost:8000/route-list
 ```
-
-### Step #4: Sharing the package
-
-You may publish your package via [Packagist](#)
-
-Remember to update `.gitattributes` to exempt some files from releases.
-
-## Testing
-
-We've defaulted to [Orchestra's testbench](https://github.com/orchestral/testbench)
-
-## Useful resource
-
-- [Laravel Package Development](https://laravel.com/docs/master/packages)
-
-- [Travis CI + GitHub Pages - Automated deployment](https://www.youtube.com/watch?v=BFpSD2eoXUk)
