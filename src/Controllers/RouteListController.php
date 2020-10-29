@@ -20,7 +20,7 @@ class RouteListController extends Controller
             })->map(function ($route) {
                 $name = $route->action['as'] ?? '';
 
-                if($name && $this->matches(['/^generated::/'], $name)) {
+                if ($name && $this->matches(['/^generated::/'], $name)) {
                     $name = '';
                 }
 
