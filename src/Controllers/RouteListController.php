@@ -18,10 +18,16 @@ class RouteListController extends Controller
             ->filter(function ($route) {
                 return ! $this->matches(config('route-list.excluded'), $route->uri);
             })->map(function ($route) {
+                $name = $route->action['as'] ?? '';
+
+                if($name && $this->matches(['/^generated::/'], $name)) {
+                    $name = '';
+                }
+
                 return [
                     // 'host' => $route->action['where'],
                     'uri' => $route->uri,
-                    'name' => $route->action['as'] ?? '',
+                    'name' => $name,
                     'methods' => $route->methods,
                     'action' => $route->action['controller'] ?? 'Closure',
                     'middleware' => $this->getRouteMiddleware($route),
