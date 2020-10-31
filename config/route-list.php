@@ -14,7 +14,10 @@ return [
     /*
      * Route pre-middleware
      */
-    'middleware' => [],
+    'middleware' => [
+        'web',
+        // 'auth',
+    ],
 
     /*
      * Routes to exclude
