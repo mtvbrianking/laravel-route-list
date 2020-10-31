@@ -20,9 +20,13 @@ return [
     ],
 
     /*
-     * Routes to exclude
+     * Routes to exclude.
+     * Use a regex pattern matching the desired route path not name.
      */
     'excluded' => [
-        '/^_ignition/',
+        // '/^_debugbar/',
+        // '/^_ignition/',
+        // '/^schematics/',
+        // '/^telescope/',
     ],
 ];
