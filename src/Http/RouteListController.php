@@ -20,7 +20,6 @@ class RouteListController extends Controller
     /**
      * Create a controller instance.
      *
-     * @param string                     $id
      * @param \Illuminate\Routing\Router $router
      *
      * @return void

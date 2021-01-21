@@ -27,6 +27,7 @@
     "illuminate/view": "^7.0|^8.0"
   },
   "require-dev": {
+    "code-lts/doctum": "^5.3",
     "friendsofphp/php-cs-fixer": "^2.18",
     "orchestra/testbench": "^5.0|^6.0",
     "phpunit/phpunit": "^8.5.8|^9.4"
@@ -45,7 +46,7 @@
   "prefer-stable": true,
   "scripts": {
     "fix-cs": "php-cs-fixer fix",
-    "gen-docs": "php sami.phar update .sami.dist",
+    "gen-docs": "doctum.php update doctum.php",
     "run-tests": "phpunit",
     "run-tests-coverage": "phpunit --coverage-html coverage"
   },

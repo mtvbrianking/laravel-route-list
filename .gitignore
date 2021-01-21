@@ -2,10 +2,7 @@ coverage
 coverage.clover
 docs
 node_modules
-sami.phar
 vendor
-xdebug-filter.php
 .idea
 .php_cs.cache
 .phpunit.result.cache
-.sami

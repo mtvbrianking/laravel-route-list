@@ -1,9 +1,11 @@
 <?php
 
-use Sami\Sami;
+require __DIR__.'/vendor/autoload.php';
+
+use Doctum\Doctum;
 use Symfony\Component\Finder\Finder;
-use Sami\Version\GitVersionCollection;
-use Sami\RemoteRepository\GitHubRemoteRepository;
+use Doctum\Version\GitVersionCollection;
+use Doctum\RemoteRepository\GitHubRemoteRepository;
 
 $dir = __DIR__ . '/src';
 
@@ -13,14 +15,10 @@ $iterator = Finder::create()
     ->in($dir);
 
 $versions = GitVersionCollection::create($dir)
-    ->add('1.x', '1.x branch');
-    ->add('master', 'Master branch');
+    ->add('1.x', 'RouteList 1.x')
+    ->add('master', 'RouteList Dev');
 
-$repo = new GitHubRemoteRepository(
-    'mtvbrianking/laravel-route-list',
-    dirname($dir),
-    'https://github.com/'
-);
+$repo = new GitHubRemoteRepository('mtvbrianking/laravel-route-list', dirname($dir));
 
 $options = [
     'theme' => 'default',
@@ -32,4 +30,4 @@ $options = [
     'default_opened_level' => 3,
 ];
 
-return new Sami($iterator, $options);
+return new Doctum($iterator, $options);

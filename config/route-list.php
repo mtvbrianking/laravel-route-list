@@ -19,7 +19,7 @@ return [
         // 'auth',
     ],
 
-    /**
+    /*
      * Rename route name matching the given pattern.
      */
     'rename' => [
