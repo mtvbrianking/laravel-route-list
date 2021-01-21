@@ -19,6 +19,13 @@ return [
         // 'auth',
     ],
 
+    /**
+     * Rename route name matching the given pattern.
+     */
+    'rename' => [
+        '/^generated::/' => '',
+    ],
+
     /*
      * Routes to exclude.
      * Use a regex pattern matching the desired route path not name.
