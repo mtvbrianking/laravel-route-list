@@ -8,7 +8,7 @@
 
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link href="{{ asset('vendor/route-list/css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css', 'vendor/route-list') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -38,7 +38,7 @@
         </main>
     </div>
 
-    <script src="{{ asset('vendor/route-list/js/app.js') }}"></script>
-    <script src="{{ asset('vendor/route-list/js/script.js') }}"></script>
+    <script src="{{ mix('js/app.js', 'vendor/route-list') }}"></script>
+    <script src="{{ mix('js/script.js', 'vendor/route-list') }}"></script>
 </body>
 </html>
