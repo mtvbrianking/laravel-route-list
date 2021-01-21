@@ -76,9 +76,11 @@ return PhpCsFixer\Config::create()
     ->setFinder(
         PhpCsFixer\Finder::create()
             ->exclude($excludes)
-            ->in(__DIR__.'/config')
-            ->in(__DIR__.'/src')
-            ->in(__DIR__.'/tests')
+            ->in([
+                __DIR__.'/config',
+                __DIR__.'/src',
+                __DIR__.'/tests',
+            ])
             ->ignoreDotFiles(true)
             ->ignoreVCS(true)
     );

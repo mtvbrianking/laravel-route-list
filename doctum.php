@@ -3,11 +3,11 @@
 require __DIR__.'/vendor/autoload.php';
 
 use Doctum\Doctum;
-use Symfony\Component\Finder\Finder;
-use Doctum\Version\GitVersionCollection;
 use Doctum\RemoteRepository\GitHubRemoteRepository;
+use Doctum\Version\GitVersionCollection;
+use Symfony\Component\Finder\Finder;
 
-$dir = __DIR__ . '/src';
+$dir = __DIR__.'/src';
 
 $iterator = Finder::create()
     ->files()
@@ -24,8 +24,8 @@ $options = [
     'theme' => 'default',
     'versions' => $versions,
     'title' => 'Laravel Route List',
-    'build_dir' => __DIR__ . '/docs/%version%',
-    'cache_dir' => __DIR__ . '/docs/cache/%version%',
+    'build_dir' => __DIR__.'/docs/%version%',
+    'cache_dir' => __DIR__.'/docs/cache/%version%',
     'remote_repository' => $repo,
     'default_opened_level' => 3,
 ];
