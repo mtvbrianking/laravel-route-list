@@ -10,12 +10,11 @@ $dir = __DIR__ . '/src';
 $iterator = Finder::create()
     ->files()
     ->name('*.php')
-    ->exclude('tests')
-    ->exclude('vendor')
     ->in($dir);
 
 $versions = GitVersionCollection::create($dir)
-    ->add('master', 'master branch');
+    ->add('1.x', '1.x branch');
+    ->add('master', 'Master branch');
 
 $repo = new GitHubRemoteRepository(
     'mtvbrianking/laravel-route-list',
@@ -27,8 +26,8 @@ $options = [
     'theme' => 'default',
     'versions' => $versions,
     'title' => 'Laravel Route List',
-    'build_dir' => __DIR__ . '/docs',
-    'cache_dir' => __DIR__ . '/docs/cache',
+    'build_dir' => __DIR__ . '/docs/%version%',
+    'cache_dir' => __DIR__ . '/docs/cache/%version%',
     'remote_repository' => $repo,
     'default_opened_level' => 3,
 ];
