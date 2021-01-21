@@ -20,8 +20,8 @@ class RouteListController extends Controller
     /**
      * Create a controller instance.
      *
-     * @param string $id
-     * @param Router $router
+     * @param string                     $id
+     * @param \Illuminate\Routing\Router $router
      *
      * @return void
      */
@@ -33,7 +33,7 @@ class RouteListController extends Controller
     /**
      * Render routes.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
     public function __invoke()
     {
@@ -71,9 +71,11 @@ class RouteListController extends Controller
      */
     protected function getRouteMiddleware($route)
     {
-        return collect($route->gatherMiddleware())->map(function ($middleware) {
+        $middlewares = collect($route->gatherMiddleware())->map(function ($middleware) {
             return $middleware instanceof \Closure ? 'Closure' : $middleware;
-        })->implode(', ');
+        });
+
+        return $middlewares->implode(', ');
     }
 
     /**

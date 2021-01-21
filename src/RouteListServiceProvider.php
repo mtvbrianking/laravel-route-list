@@ -30,7 +30,7 @@ class RouteListServiceProvider extends ServiceProvider
         ], 'config');
 
         $this->publishes([
-            __DIR__.'/../public' => public_path('vendor/route-list'),
+            __DIR__.'/../public/vendor/route-list' => public_path('vendor/route-list'),
         ], 'public');
     }
 
