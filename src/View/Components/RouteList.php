@@ -1,20 +1,58 @@
 <?php
 
-namespace Bmatovu\RouteList\Controllers;
+namespace Bmatovu\RouteList\View\Components;
 
-use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Router;
+use Illuminate\View\Component;
 
-class RouteListController extends Controller
+class RouteList extends Component
 {
     /**
-     * Render routes.
+     * Router.
      *
-     * @return \Illuminate\Http\Response
+     * @var \Illuminate\Routing\Router
      */
-    public function __invoke()
+    protected $router;
+
+    /**
+     * Table ID.
+     *
+     * @var string
+     */
+    protected $id;
+
+    /**
+     * Create a new component instance.
+     *
+     * @param string                     $id
+     * @param \Illuminate\Routing\Router $router
+     *
+     * @return void
+     */
+    public function __construct(Router $router, $id = 'routes')
     {
-        $routes = collect(Route::getRoutes())
+        $this->router = $router;
+        $this->id = $id;
+    }
+
+    /**
+     * Get the view / contents that represent the component.
+     *
+     * @return \Illuminate\Contracts\View\View|string
+     */
+    public function render()
+    {
+        $routes = $this->getRoutes();
+
+        return view('route-list::components.list', [
+            'id' => $this->id,
+            'routes' => $routes,
+        ]);
+    }
+
+    protected function getRoutes()
+    {
+        return collect($this->router->getRoutes())
             ->filter(function ($route) {
                 return ! $this->matches(config('route-list.excluded'), $route->uri);
             })->map(function ($route) {
@@ -33,10 +71,6 @@ class RouteListController extends Controller
                     'middleware' => $this->getRouteMiddleware($route),
                 ];
             });
-
-        return view('route-list::index', [
-            'routes' => $routes,
-        ]);
     }
 
     /**
@@ -49,7 +83,7 @@ class RouteListController extends Controller
     protected function getRouteMiddleware($route)
     {
         return collect($route->gatherMiddleware())->map(function ($middleware) {
-            return $middleware instanceof Closure ? 'Closure' : $middleware;
+            return $middleware instanceof \Closure ? 'Closure' : $middleware;
         })->implode(', ');
     }
 
