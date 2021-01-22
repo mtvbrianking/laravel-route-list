@@ -2,8 +2,8 @@
 
 namespace Bmatovu\RouteList\Http;
 
-use Illuminate\Routing\Controller;
 use Illuminate\Routing\Router;
+use Illuminate\Routing\Controller;
 
 /**
  * @see \Illuminate\Foundation\Console\RouteListCommand
