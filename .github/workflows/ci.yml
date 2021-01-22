@@ -13,6 +13,9 @@ jobs:
       fail-fast: true
       matrix:
         php: [7.3, 8.0]
+        laravel: [^7.0, ^8.0]
+
+    name: P${{ matrix.php }} - L${{ matrix.laravel }}
 
     steps:
       - name: Checkout code
@@ -23,20 +26,21 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
+          tools: composer:v2
           coverage: none
+
+      - name: Install dependencies
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          composer update --prefer-dist --no-interaction --no-progress --no-suggest
 
       - name: Create database
         run: |
           mkdir -p database
           touch database/database.sqlite
 
-      - name: Install dependencies
-        run: |
-          composer update --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
-
       - name: Execute tests
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: database/database.sqlite
-        run: vendor/bin/phpunit
-
+        run: vendor/bin/phpunit --verbose
