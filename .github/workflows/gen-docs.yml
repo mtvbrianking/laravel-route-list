@@ -29,10 +29,11 @@ jobs:
           key: dependencies-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
 
       - name: Composer
-        run: composer update --prefer-dist --no-interaction --no-progress
+        # run: composer update --prefer-dist --no-interaction --no-progress
+        run: composer require code-lts/doctum --dev --prefer-dist --no-interaction --no-progress
 
       - name: Generate
-        run: vendor/bin/doctum.php update doctum.php
+        run: vendor/bin/doctum.php update doctum.php -v
 
       # - name: Deploy
       #   run: "..."
