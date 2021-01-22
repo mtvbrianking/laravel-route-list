@@ -1,0 +1,36 @@
+name: gen-docs
+
+# on:
+#   push:
+#     branches: [ $default-branch ]
+
+on:
+  workflow_dispatch:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        php: [8.0]
+    name: Docs P${{ matrix.php }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.composer/cache/files
+          key: dependencies-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
+
+      - name: Composer
+        run: composer update --prefer-dist --no-interaction --no-progress
+
+      - name: Generate
+        run: vendor/bin/doctum.php update doctum.php
+
+      # - name: Deploy
+      #   run: "..."
