@@ -16,14 +16,14 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: [7.3]
-        laravel: [7.*]
+        php: [7.3, 8.0]
+        laravel: [^7.0, ^8.0]
         include:
-          - laravel: 7.*
-            testbench: 5.*
-
+          - laravel: ^7.0
+            testbench: ^5.0
+          - laravel: ^8.0
+            testbench: ^6.0
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - T${{ matrix.testbench }}
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -59,6 +59,14 @@ jobs:
           DB_DATABASE: database/database.sqlite
         run: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
 
+  coverage:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        php: [7.3]
+    name: P${{ matrix.php }}
+    steps:
       - name: Download ocular
         run: wget https://scrutinizer-ci.com/ocular.phar
 
