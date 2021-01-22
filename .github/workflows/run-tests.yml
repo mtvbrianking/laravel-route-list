@@ -15,12 +15,18 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
+      # matrix:
+      #   php: [7.3, 8.0]
+      #   laravel: [^7.0, ^8.0]
+      #   include:
+      #     - laravel: ^7.0
+      #       testbench: ^5.0
+      #     - laravel: ^8.0
+      #       testbench: ^6.0
       matrix:
-        php: [7.3, 8.0]
-        laravel: [^7.0, ^8.0]
+        php: [8.0]
+        laravel: [^8.0]
         include:
-          - laravel: ^7.0
-            testbench: ^5.0
           - laravel: ^8.0
             testbench: ^6.0
     name: Tests P${{ matrix.php }} - L${{ matrix.laravel }} - T${{ matrix.testbench }}
@@ -68,6 +74,14 @@ jobs:
         php: [7.3]
     name: Coverage P${{ matrix.php }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+
       - name: Download ocular
         run: wget https://scrutinizer-ci.com/ocular.phar
 
