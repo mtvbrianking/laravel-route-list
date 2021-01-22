@@ -1,4 +1,4 @@
-name: tests
+name: run-tests
 
 # on:
 #   push:
@@ -34,9 +34,9 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, pcov
           tools: composer:v2
-          coverage: none
+          coverage: pcov
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -46,16 +46,23 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
-          composer update --prefer-dist --no-interaction --no-progress --no-suggest
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-progress --no-update
+          composer update --prefer-dist --no-interaction --no-progress
 
       - name: Create tests database
         run: |
           mkdir -p database
           touch database/database.sqlite
 
-      - name: Execute tests
+      # https://blog.shaharia.com/github-actions-workflows-ci-for-php-developer
+      - name: Execute tests + coverage
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: database/database.sqlite
-        run: vendor/bin/phpunit --verbose
+        run: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
+
+      - name: Download ocular
+        run: wget https://scrutinizer-ci.com/ocular.phar
+
+      - name: Upload code coverage
+        run: php ocular.phar code-coverage:upload --format=php-clover coverage.clover
