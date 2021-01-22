@@ -82,8 +82,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
 
-      - name: Download ocular
-        run: wget https://scrutinizer-ci.com/ocular.phar
-
       - name: Upload code coverage report
-        run: php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+        run: |
+          wget https://scrutinizer-ci.com/ocular.phar
+          php ocular.phar code-coverage:upload --format=php-clover coverage.clover
