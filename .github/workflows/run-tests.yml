@@ -16,13 +16,11 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: [7.3, 8.0]
-        laravel: [7.*, 8.*]
+        php: [7.3]
+        laravel: [7.*]
         include:
           - laravel: 7.*
             testbench: 5.*
-          - laravel: 8.*
-            testbench: 6.*
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - T${{ matrix.testbench }}
 
@@ -55,7 +53,7 @@ jobs:
           touch database/database.sqlite
 
       # https://blog.shaharia.com/github-actions-workflows-ci-for-php-developer
-      - name: Execute tests + coverage
+      - name: Execute tests, generate code coverage report
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: database/database.sqlite
@@ -64,5 +62,5 @@ jobs:
       - name: Download ocular
         run: wget https://scrutinizer-ci.com/ocular.phar
 
-      - name: Upload code coverage
+      - name: Upload code coverage report
         run: php ocular.phar code-coverage:upload --format=php-clover coverage.clover
