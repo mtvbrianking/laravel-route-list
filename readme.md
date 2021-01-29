@@ -28,6 +28,16 @@ php artisan vendor:publish --provider="Bmatovu\RouteList\RouteListServiceProvide
 
 Usage
 
+The package creates a dedicated route to view routes.
+
 ```bash
 http://localhost:8000/route-list
 ```
+
+Alternative, you can use the view component. [See example](/resources/views/index.blade.php)
+
+```html
+<x-route-list-table/>
+```
+
+Note: _This package uses Bootstrap CSS styling._
