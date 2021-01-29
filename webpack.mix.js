@@ -8,4 +8,6 @@ mix.sass('resources/sass/app.scss', 'css');
 
 mix.sourceMaps();
 
-mix.version();
+if (mix.inProduction()) {
+    mix.version();
+}
