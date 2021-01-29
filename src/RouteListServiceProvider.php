@@ -17,8 +17,8 @@ class RouteListServiceProvider extends ServiceProvider
             return;
         }
 
-        $this->loadViewComponentsAs('', [
-            View\Components\RouteList::class,
+        $this->loadViewComponentsAs('route-list', [
+            View\Components\Table::class,
         ]);
 
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');

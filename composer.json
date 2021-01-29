@@ -45,10 +45,11 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "scripts": {
-    "fix-cs": "php-cs-fixer fix",
-    "gen-docs": "doctum.php update doctum.php",
-    "run-tests": "phpunit",
-    "run-tests-coverage": "phpunit --coverage-html coverage"
+    "cs-fix": "php-cs-fixer fix",
+    "cs-lint": "php-cs-fixer fix --dry-run",
+    "docs": "doctum.php update doctum.php",
+    "test": "phpunit",
+    "test-coverage": "phpunit --coverage-html coverage"
   },
 
   "config": {

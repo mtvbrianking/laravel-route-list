@@ -31,7 +31,7 @@
 
                 <div class="row justify-content-center">
                     <div class="col">
-                        <x-route-list id="routes"/>
+                        <x-route-list-table id="routes"/>
                     </div>
                 </div>
             </div>

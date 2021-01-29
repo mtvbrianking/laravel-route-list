@@ -5,7 +5,7 @@ namespace Bmatovu\RouteList\View\Components;
 use Illuminate\Routing\Router;
 use Illuminate\View\Component;
 
-class RouteList extends Component
+class Table extends Component
 {
     /**
      * Router.
@@ -44,7 +44,7 @@ class RouteList extends Component
     {
         $routes = $this->getRoutes();
 
-        return view('route-list::components.list', [
+        return view('route-list::components.table', [
             'id' => $this->id,
             'routes' => $routes,
         ]);
