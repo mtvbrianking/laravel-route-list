@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.5",
-    "datatables.net": "^1.10",
+    "datatables.net": "^1.11",
     "datatables.net-bs4": "^1.10",
     "jquery": "^3.4",
     "popper.js": "^1.16"
