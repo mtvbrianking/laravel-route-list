@@ -1,10 +1,6 @@
 name: run-tests
 
-on:
-  push:
-    branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
+n: [push, pull_request]
 
 jobs:
   tests:

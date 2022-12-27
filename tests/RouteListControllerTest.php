@@ -9,7 +9,7 @@ class RouteListControllerTest extends TestCase
 {
     protected $packagePublicDir = __DIR__.'/../public';
 
-    public function test_can_display_route_list()
+    public function testCanDisplayRouteList()
     {
         $this->app->instance('path.public', $this->packagePublicDir);
 

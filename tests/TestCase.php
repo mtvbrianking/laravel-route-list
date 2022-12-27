@@ -1,4 +1,5 @@
 <?php
+
 namespace Bmatovu\RouteList\Tests;
 
 use Bmatovu\RouteList\RouteListServiceProvider;

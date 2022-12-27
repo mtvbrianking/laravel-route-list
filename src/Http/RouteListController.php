@@ -19,10 +19,6 @@ class RouteListController extends Controller
 
     /**
      * Create a controller instance.
-     *
-     * @param \Illuminate\Routing\Router $router
-     *
-     * @return void
      */
     public function __construct(Router $router)
     {
@@ -80,7 +76,7 @@ class RouteListController extends Controller
     /**
      * Perform a regular expression match.
      *
-     * @param array  $patterns
+     * @param array $patterns
      * @param string $subject
      *
      * @return bool

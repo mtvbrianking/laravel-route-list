@@ -24,10 +24,7 @@ class Table extends Component
     /**
      * Create a new component instance.
      *
-     * @param string                     $id
-     * @param \Illuminate\Routing\Router $router
-     *
-     * @return void
+     * @param string $id
      */
     public function __construct(Router $router, $id = 'routes')
     {
@@ -90,7 +87,7 @@ class Table extends Component
     /**
      * Perform a regular expression match.
      *
-     * @param array  $patterns
+     * @param array $patterns
      * @param string $subject
      *
      * @return bool

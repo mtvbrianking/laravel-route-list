@@ -8,12 +8,10 @@ class RouteListServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
-     *
-     * @return void
      */
     public function boot()
     {
-        if (config('route-list.debug') != config('app.debug')) {
+        if (config('route-list.debug') !== config('app.debug')) {
             return;
         }
 
@@ -36,8 +34,6 @@ class RouteListServiceProvider extends ServiceProvider
 
     /**
      * Register the application services.
-     *
-     * @return void
      */
     public function register()
     {
