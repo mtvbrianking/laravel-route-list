@@ -10,30 +10,47 @@
         <link rel="stylesheet" type="text/css" href="css/doctum.css">
         <link rel="stylesheet" type="text/css" href="fonts/doctum-font.css">
         <script src="js/jquery-3.5.1.slim.min.js"></script>
+        <script async defer src="doctum.js"></script>
         <script async defer src="js/bootstrap.min.js"></script>
-        <script src="js/typeahead.min.js"></script>
-        <script src="doctum.js"></script>
+        <script async defer src="js/autocomplete.min.js"></script>
         <meta name="MobileOptimized" content="width">
         <meta name="HandheldFriendly" content="true">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
     </head>
 
-    <body id="doc-index" data-name="" data-root-path="">
+    <body id="doc-index" data-name="" data-root-path="" data-search-index-url="doctum-search.json">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
                     <form action="#">
-                <select  class="form-control" id="version-switcher" name="version">
-                                            <option value="../1.x/index.html" data-version="1.x">RouteList 1.x</option>
-                                            <option value="../master/index.html" data-version="master">RouteList Dev</option>
+                <select class="form-control" id="version-switcher" name="version">
+                                            <option
+                            value="../1.x/index.html"
+                            data-version="1.x" >RouteList 1.x</option>
+                                            <option
+                            value="../master/index.html"
+                            data-version="master" selected>RouteList Dev</option>
                                     </select>
             </form>
-                <form id="search-form" action="search.html">
+                <div class="search-bar hidden" id="search-progress-bar-container">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" id="search-progress-bar"
+                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+            </div>
+        </div>
+        <form id="search-form" action="search.html">
             <span class="icon icon-search"></span>
             <input name="search"
+                   id="doctum-search-auto-complete"
                    class="typeahead form-control"
                    type="search"
-                   placeholder="Search">
+                   placeholder="Search"
+                   spellcheck="false"
+                   autocorrect="off"
+                   autocomplete="off"
+                   autocapitalize="off">
+            <div class="auto-complete-results" id="auto-complete-results"></div>
         </form>
     </div>
 
@@ -54,6 +71,15 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-elements">
                 <ul class="nav navbar-nav">
+                                        <li role="presentation" class="dropdown visible-xs-block visible-sm-block">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                            role="button" aria-haspopup="true" aria-expanded="false">Versions&nbsp;<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li ><a href="../1.x/index.html" data-version="1.x">RouteList 1.x</a></li>
+                        <li class="active"><a href="../master/index.html" data-version="master">RouteList Dev</a></li>
+                        </ul>
+                    </li>
                     <li><a href="classes.html">Classes</a></li>
                     <li><a href="namespaces.html">Namespaces</a></li>
                     <li><a href="interfaces.html">Interfaces</a></li>
@@ -66,7 +92,6 @@
     </nav>
 
                         <div id="page-content">
-                
     <div class="page-header">
         <h1>Index</h1>
     </div>
@@ -103,41 +128,42 @@
     <h2 id="letterB">B</h2>
         <dl id="indexB"><dt><a href="Bmatovu/RouteList/RouteListServiceProvider.html#method_boot">
 <abbr title="Bmatovu\RouteList\RouteListServiceProvider">RouteListServiceProvider</abbr>::boot</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/RouteListServiceProvider.html"><abbr title="Bmatovu\RouteList\RouteListServiceProvider">RouteListServiceProvider</abbr></a></em></dt>
-                    <dd>Bootstrap the application services.</dd>        </dl><h2 id="letterG">G</h2>
+                    <dd><p>Bootstrap the application services.</p></dd>        </dl><h2 id="letterG">G</h2>
         <dl id="indexG"><dt><a href="Bmatovu/RouteList/Http/RouteListController.html#method_getRouteMiddleware">
 <abbr title="Bmatovu\RouteList\Http\RouteListController">RouteListController</abbr>::getRouteMiddleware</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/Http/RouteListController.html"><abbr title="Bmatovu\RouteList\Http\RouteListController">RouteListController</abbr></a></em></dt>
-                    <dd>Get route middleware.</dd><dt><a href="Bmatovu/RouteList/View/Components/RouteList.html#method_getRoutes">
-<abbr title="Bmatovu\RouteList\View\Components\RouteList">RouteList</abbr>::getRoutes</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/View/Components/RouteList.html"><abbr title="Bmatovu\RouteList\View\Components\RouteList">RouteList</abbr></a></em></dt>
-                    <dd></dd><dt><a href="Bmatovu/RouteList/View/Components/RouteList.html#method_getRouteMiddleware">
-<abbr title="Bmatovu\RouteList\View\Components\RouteList">RouteList</abbr>::getRouteMiddleware</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/View/Components/RouteList.html"><abbr title="Bmatovu\RouteList\View\Components\RouteList">RouteList</abbr></a></em></dt>
-                    <dd>Get route middleware.</dd>        </dl><h2 id="letterI">I</h2>
-        <dl id="indexI"><dt>$<a href="Bmatovu/RouteList/View/Components/RouteList.html#property_id">
-<abbr title="Bmatovu\RouteList\View\Components\RouteList">RouteList</abbr>#id</a> &mdash; <em>Property in class <a href="Bmatovu/RouteList/View/Components/RouteList.html"><abbr title="Bmatovu\RouteList\View\Components\RouteList">RouteList</abbr></a></em></dt>
-                    <dd>Table ID.</dd>        </dl><h2 id="letterM">M</h2>
+                    <dd><p>Get route middleware.</p></dd><dt><a href="Bmatovu/RouteList/View/Components/Table.html#method_getRoutes">
+<abbr title="Bmatovu\RouteList\View\Components\Table">Table</abbr>::getRoutes</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/View/Components/Table.html"><abbr title="Bmatovu\RouteList\View\Components\Table">Table</abbr></a></em></dt>
+                    <dd></dd><dt><a href="Bmatovu/RouteList/View/Components/Table.html#method_getRouteMiddleware">
+<abbr title="Bmatovu\RouteList\View\Components\Table">Table</abbr>::getRouteMiddleware</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/View/Components/Table.html"><abbr title="Bmatovu\RouteList\View\Components\Table">Table</abbr></a></em></dt>
+                    <dd><p>Get route middleware.</p></dd>        </dl><h2 id="letterI">I</h2>
+        <dl id="indexI"><dt>$<a href="Bmatovu/RouteList/View/Components/Table.html#property_id">
+<abbr title="Bmatovu\RouteList\View\Components\Table">Table</abbr>#id</a> &mdash; <em>Property in class <a href="Bmatovu/RouteList/View/Components/Table.html"><abbr title="Bmatovu\RouteList\View\Components\Table">Table</abbr></a></em></dt>
+                    <dd><p>Table ID.</p></dd>        </dl><h2 id="letterM">M</h2>
         <dl id="indexM"><dt><a href="Bmatovu/RouteList/Http/RouteListController.html#method_matches">
 <abbr title="Bmatovu\RouteList\Http\RouteListController">RouteListController</abbr>::matches</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/Http/RouteListController.html"><abbr title="Bmatovu\RouteList\Http\RouteListController">RouteListController</abbr></a></em></dt>
-                    <dd>Perform a regular expression match.</dd><dt><a href="Bmatovu/RouteList/View/Components/RouteList.html#method_matches">
-<abbr title="Bmatovu\RouteList\View\Components\RouteList">RouteList</abbr>::matches</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/View/Components/RouteList.html"><abbr title="Bmatovu\RouteList\View\Components\RouteList">RouteList</abbr></a></em></dt>
-                    <dd>Perform a regular expression match.</dd>        </dl><h2 id="letterR">R</h2>
+                    <dd><p>Perform a regular expression match.</p></dd><dt><a href="Bmatovu/RouteList/View/Components/Table.html#method_matches">
+<abbr title="Bmatovu\RouteList\View\Components\Table">Table</abbr>::matches</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/View/Components/Table.html"><abbr title="Bmatovu\RouteList\View\Components\Table">Table</abbr></a></em></dt>
+                    <dd><p>Perform a regular expression match.</p></dd>        </dl><h2 id="letterR">R</h2>
         <dl id="indexR"><dt><a href="Bmatovu/RouteList/Http/RouteListController.html"><abbr title="Bmatovu\RouteList\Http\RouteListController">RouteListController</abbr></a> &mdash; <em>Class in namespace <a href="Bmatovu/RouteList/Http.html">Bmatovu\RouteList\Http</a></em></dt>
                     <dd></dd><dt>$<a href="Bmatovu/RouteList/Http/RouteListController.html#property_router">
 <abbr title="Bmatovu\RouteList\Http\RouteListController">RouteListController</abbr>#router</a> &mdash; <em>Property in class <a href="Bmatovu/RouteList/Http/RouteListController.html"><abbr title="Bmatovu\RouteList\Http\RouteListController">RouteListController</abbr></a></em></dt>
                     <dd>Router.</dd><dt><a href="Bmatovu/RouteList/RouteListServiceProvider.html"><abbr title="Bmatovu\RouteList\RouteListServiceProvider">RouteListServiceProvider</abbr></a> &mdash; <em>Class in namespace <a href="Bmatovu/RouteList.html">Bmatovu\RouteList</a></em></dt>
                     <dd></dd><dt><a href="Bmatovu/RouteList/RouteListServiceProvider.html#method_register">
 <abbr title="Bmatovu\RouteList\RouteListServiceProvider">RouteListServiceProvider</abbr>::register</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/RouteListServiceProvider.html"><abbr title="Bmatovu\RouteList\RouteListServiceProvider">RouteListServiceProvider</abbr></a></em></dt>
-                    <dd>Register the application services.</dd><dt><a href="Bmatovu/RouteList/View/Components/RouteList.html"><abbr title="Bmatovu\RouteList\View\Components\RouteList">RouteList</abbr></a> &mdash; <em>Class in namespace <a href="Bmatovu/RouteList/View/Components.html">Bmatovu\RouteList\View\Components</a></em></dt>
-                    <dd></dd><dt>$<a href="Bmatovu/RouteList/View/Components/RouteList.html#property_router">
-<abbr title="Bmatovu\RouteList\View\Components\RouteList">RouteList</abbr>#router</a> &mdash; <em>Property in class <a href="Bmatovu/RouteList/View/Components/RouteList.html"><abbr title="Bmatovu\RouteList\View\Components\RouteList">RouteList</abbr></a></em></dt>
-                    <dd>Router.</dd><dt><a href="Bmatovu/RouteList/View/Components/RouteList.html#method_render">
-<abbr title="Bmatovu\RouteList\View\Components\RouteList">RouteList</abbr>::render</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/View/Components/RouteList.html"><abbr title="Bmatovu\RouteList\View\Components\RouteList">RouteList</abbr></a></em></dt>
-                    <dd>Get the view / contents that represent the component.</dd>        </dl><h2 id="letter_">_</h2>
+                    <dd><p>Register the application services.</p></dd><dt>$<a href="Bmatovu/RouteList/View/Components/Table.html#property_router">
+<abbr title="Bmatovu\RouteList\View\Components\Table">Table</abbr>#router</a> &mdash; <em>Property in class <a href="Bmatovu/RouteList/View/Components/Table.html"><abbr title="Bmatovu\RouteList\View\Components\Table">Table</abbr></a></em></dt>
+                    <dd>Router.</dd><dt><a href="Bmatovu/RouteList/View/Components/Table.html#method_render">
+<abbr title="Bmatovu\RouteList\View\Components\Table">Table</abbr>::render</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/View/Components/Table.html"><abbr title="Bmatovu\RouteList\View\Components\Table">Table</abbr></a></em></dt>
+                    <dd><p>Get the view / contents that represent the component.</p></dd>        </dl><h2 id="letterT">T</h2>
+        <dl id="indexT"><dt><a href="Bmatovu/RouteList/View/Components/Table.html"><abbr title="Bmatovu\RouteList\View\Components\Table">Table</abbr></a> &mdash; <em>Class in namespace <a href="Bmatovu/RouteList/View/Components.html">Bmatovu\RouteList\View\Components</a></em></dt>
+                    <dd></dd>        </dl><h2 id="letter_">_</h2>
         <dl id="index_"><dt><a href="Bmatovu/RouteList/Http/RouteListController.html#method___construct">
 <abbr title="Bmatovu\RouteList\Http\RouteListController">RouteListController</abbr>::__construct</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/Http/RouteListController.html"><abbr title="Bmatovu\RouteList\Http\RouteListController">RouteListController</abbr></a></em></dt>
-                    <dd>Create a controller instance.</dd><dt><a href="Bmatovu/RouteList/Http/RouteListController.html#method___invoke">
+                    <dd><p>Create a controller instance.</p></dd><dt><a href="Bmatovu/RouteList/Http/RouteListController.html#method___invoke">
 <abbr title="Bmatovu\RouteList\Http\RouteListController">RouteListController</abbr>::__invoke</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/Http/RouteListController.html"><abbr title="Bmatovu\RouteList\Http\RouteListController">RouteListController</abbr></a></em></dt>
-                    <dd>Render routes.</dd><dt><a href="Bmatovu/RouteList/View/Components/RouteList.html#method___construct">
-<abbr title="Bmatovu\RouteList\View\Components\RouteList">RouteList</abbr>::__construct</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/View/Components/RouteList.html"><abbr title="Bmatovu\RouteList\View\Components\RouteList">RouteList</abbr></a></em></dt>
-                    <dd>Create a new component instance.</dd>        </dl>            </div><div id="footer">
+                    <dd><p>Render routes.</p></dd><dt><a href="Bmatovu/RouteList/View/Components/Table.html#method___construct">
+<abbr title="Bmatovu\RouteList\View\Components\Table">Table</abbr>::__construct</a>() &mdash; <em>Method in class <a href="Bmatovu/RouteList/View/Components/Table.html"><abbr title="Bmatovu\RouteList\View\Components\Table">Table</abbr></a></em></dt>
+                    <dd><p>Create a new component instance.</p></dd>        </dl></div><div id="footer">
         Generated by <a href="https://github.com/code-lts/doctum">Doctum, a API Documentation generator and fork of Sami</a>.</div></div>
     </div>
     </body>

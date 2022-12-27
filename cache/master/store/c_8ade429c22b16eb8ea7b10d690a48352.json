@@ -14,13 +14,15 @@
     "namespace": "Bmatovu\\RouteList\\Http",
     "file": "\/home\/runner\/work\/laravel-route-list\/laravel-route-list\/src\/Http\/RouteListController.php",
     "relative_file": "\/src\/Http\/RouteListController.php",
-    "hash": "de97bfc0063efdc14f1afbf887fe020e981257e0",
+    "hash": "c60927296f8ad1f0aa460e66b211322a9536dc52",
     "parent": "Illuminate\\Routing\\Controller",
     "modifiers": 0,
     "is_trait": false,
     "is_interface": false,
+    "is_read_only": false,
     "aliases": {
-        "": "Illuminate\\Routing\\Router"
+        "Controller": "Illuminate\\Routing\\Controller",
+        "Router": "Illuminate\\Routing\\Router"
     },
     "errors": [],
     "interfaces": [],
@@ -37,27 +39,25 @@
                     false
                 ]
             ],
-            "hint_desc": null,
+            "hint_desc": "",
             "tags": [],
             "modifiers": 2,
             "default": null,
-            "errors": []
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false
         }
     },
     "methods": {
         "__construct": {
             "name": "__construct",
-            "line": 27,
+            "line": 23,
             "short_desc": "Create a controller instance.",
             "long_desc": "",
-            "hint": [
-                [
-                    "void",
-                    false
-                ]
-            ],
+            "hint": null,
             "hint_desc": null,
             "tags": [],
+            "see": [],
             "modifiers": 1,
             "is_by_ref": "",
             "exceptions": [],
@@ -65,8 +65,8 @@
             "parameters": {
                 "router": {
                     "name": "router",
-                    "line": 27,
-                    "short_desc": "",
+                    "line": 23,
+                    "short_desc": null,
                     "long_desc": null,
                     "hint": [
                         [
@@ -75,27 +75,17 @@
                         ]
                     ],
                     "tags": [],
-                    "modifiers": {
-                        "nodeType": "Name_FullyQualified",
-                        "parts": [
-                            "Illuminate",
-                            "Routing",
-                            "Router"
-                        ],
-                        "attributes": {
-                            "startLine": 27,
-                            "endLine": 27
-                        }
-                    },
+                    "modifiers": 0,
                     "default": null,
                     "variadic": false,
-                    "is_by_ref": false
+                    "is_by_ref": false,
+                    "is_read_only": false
                 }
             }
         },
         "__invoke": {
             "name": "__invoke",
-            "line": 37,
+            "line": 33,
             "short_desc": "Render routes.",
             "long_desc": "",
             "hint": [
@@ -104,8 +94,9 @@
                     false
                 ]
             ],
-            "hint_desc": null,
+            "hint_desc": "",
             "tags": [],
+            "see": [],
             "modifiers": 1,
             "is_by_ref": "",
             "exceptions": [],
@@ -114,7 +105,7 @@
         },
         "getRouteMiddleware": {
             "name": "getRouteMiddleware",
-            "line": 71,
+            "line": 67,
             "short_desc": "Get route middleware.",
             "long_desc": "",
             "hint": [
@@ -123,8 +114,9 @@
                     false
                 ]
             ],
-            "hint_desc": null,
+            "hint_desc": "",
             "tags": [],
+            "see": [],
             "modifiers": 2,
             "is_by_ref": "",
             "exceptions": [],
@@ -132,7 +124,7 @@
             "parameters": {
                 "route": {
                     "name": "route",
-                    "line": 71,
+                    "line": 67,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -142,16 +134,17 @@
                         ]
                     ],
                     "tags": [],
-                    "modifiers": null,
+                    "modifiers": 0,
                     "default": null,
                     "variadic": false,
-                    "is_by_ref": false
+                    "is_by_ref": false,
+                    "is_read_only": false
                 }
             }
         },
         "matches": {
             "name": "matches",
-            "line": 88,
+            "line": 84,
             "short_desc": "Perform a regular expression match.",
             "long_desc": "",
             "hint": [
@@ -160,8 +153,9 @@
                     false
                 ]
             ],
-            "hint_desc": null,
+            "hint_desc": "",
             "tags": [],
+            "see": [],
             "modifiers": 2,
             "is_by_ref": "",
             "exceptions": [],
@@ -169,7 +163,7 @@
             "parameters": {
                 "patterns": {
                     "name": "patterns",
-                    "line": 88,
+                    "line": 84,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -179,14 +173,15 @@
                         ]
                     ],
                     "tags": [],
-                    "modifiers": null,
+                    "modifiers": 0,
                     "default": null,
                     "variadic": false,
-                    "is_by_ref": false
+                    "is_by_ref": false,
+                    "is_read_only": false
                 },
                 "subject": {
                     "name": "subject",
-                    "line": 88,
+                    "line": 84,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -196,10 +191,11 @@
                         ]
                     ],
                     "tags": [],
-                    "modifiers": null,
+                    "modifiers": 0,
                     "default": null,
                     "variadic": false,
-                    "is_by_ref": false
+                    "is_by_ref": false,
+                    "is_read_only": false
                 }
             }
         }

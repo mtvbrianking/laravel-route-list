@@ -8,13 +8,14 @@
     "namespace": "Bmatovu\\RouteList",
     "file": "\/home\/runner\/work\/laravel-route-list\/laravel-route-list\/src\/RouteListServiceProvider.php",
     "relative_file": "\/src\/RouteListServiceProvider.php",
-    "hash": "6a7188bdedc5682038378fc32c3bdf1c5047f6d1",
+    "hash": "0c572f935d449c6faf98e9d2e1e1c4f8125484a0",
     "parent": "Illuminate\\Support\\ServiceProvider",
     "modifiers": 0,
     "is_trait": false,
     "is_interface": false,
+    "is_read_only": false,
     "aliases": {
-        "": "Illuminate\\Support\\ServiceProvider"
+        "ServiceProvider": "Illuminate\\Support\\ServiceProvider"
     },
     "errors": [],
     "interfaces": [],
@@ -23,17 +24,13 @@
     "methods": {
         "boot": {
             "name": "boot",
-            "line": 14,
+            "line": 12,
             "short_desc": "Bootstrap the application services.",
             "long_desc": "",
-            "hint": [
-                [
-                    "void",
-                    false
-                ]
-            ],
+            "hint": null,
             "hint_desc": null,
             "tags": [],
+            "see": [],
             "modifiers": 1,
             "is_by_ref": "",
             "exceptions": [],
@@ -42,17 +39,13 @@
         },
         "register": {
             "name": "register",
-            "line": 42,
+            "line": 38,
             "short_desc": "Register the application services.",
             "long_desc": "",
-            "hint": [
-                [
-                    "void",
-                    false
-                ]
-            ],
+            "hint": null,
             "hint_desc": null,
             "tags": [],
+            "see": [],
             "modifiers": 1,
             "is_by_ref": "",
             "exceptions": [],
