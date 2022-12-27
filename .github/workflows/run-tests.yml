@@ -15,20 +15,23 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
-      # matrix:
-      #   php: [7.3, 8.0]
-      #   laravel: [^7.0, ^8.0]
-      #   include:
-      #     - laravel: ^7.0
-      #       testbench: ^5.0
-      #     - laravel: ^8.0
-      #       testbench: ^6.0
       matrix:
-        php: [8.0]
-        laravel: [^8.0]
+        php: [8.1, 8.0, 7.4]
+        laravel: [^9.0, ^8.0, ^7.0]
         include:
+          - laravel: ^9.0
+            testbench: ^7.0
           - laravel: ^8.0
             testbench: ^6.0
+          - laravel: ^7.0
+            testbench: ^5.0
+        exclude:
+          - laravel: ^9.0
+            php: 7.4
+          - laravel: ^8.0
+            php: 8.1
+          - laravel: ^7.0
+            php: 8.1
     name: Tests P${{ matrix.php }} - L${{ matrix.laravel }} - T${{ matrix.testbench }}
     steps:
       - name: Checkout code
@@ -71,7 +74,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: [7.3]
+        php: [7.4]
     name: Coverage P${{ matrix.php }}
     steps:
       - name: Checkout code
